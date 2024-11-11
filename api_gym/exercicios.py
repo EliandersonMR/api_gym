@@ -36,3 +36,4 @@ def deletar_exercicio(db: Session, exercicio_id: int):
         db.delete(db_exercicio)
         db.commit()
     return db_exercicio
+
