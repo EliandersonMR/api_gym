@@ -15,4 +15,8 @@ class User(Base):
     id = Column(Integer, primary_key=True, index=True)
     username = Column(String, unique=True, index=True)
     email = Column(String, unique=True, index=True)
+<<<<<<< HEAD
     hashed_password = Column(String)
+=======
+    hashed_password = Column(String)
+>>>>>>> 8e13545a7acce39a6482b755a0a67e23967415f9
