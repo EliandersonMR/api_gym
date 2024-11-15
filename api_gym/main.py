@@ -117,9 +117,9 @@ async def deletar_exercicio_endpoint(exercicio_id: int, db: Session = Depends(ob
 origins = [
     "http://localhost",  
     "http://127.0.0.1", 
-    "http://192.168.1.104"
+    "http://192.168.1.104",
     "http://localhost:5500",
-    "http://localhost:8080"  
+    "http://localhost:8080",  
     "https://api-gym-1.onrender.com",  
 ]
 
