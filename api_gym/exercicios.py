@@ -2,12 +2,6 @@ from sqlalchemy.orm import Session
 from api_gym.models import Exercicio
 from api_gym.schemas import ExercicioCriar
 
-def criar_exercicios_iniciais(db: Session, exercicios: list):
-    for exercicio in exercicios:
-        db_exercicio = Exercicio(**exercicio)
-        db.add(db_exercicio)
-    db.commit()
-
 def criar_exercicio(db: Session, exercicio: ExercicioCriar):
     db_exercicio = Exercicio(**exercicio.dict())
     db.add(db_exercicio)
