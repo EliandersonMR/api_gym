@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException, Depends
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 from contextlib import asynccontextmanager
@@ -17,8 +18,6 @@ from api_gym.exercicios import (
 
 # Banco de dados
 Base.metadata.create_all(bind=engine)
-
-app = FastAPI()
 
 # Sessão do banco de dados
 def obter_db():
@@ -113,3 +112,24 @@ async def deletar_exercicio_endpoint(exercicio_id: int, db: Session = Depends(ob
     if db_exercicio is None:
         raise HTTPException(status_code=404, detail="Exercício não encontrado")
     return db_exercicio
+
+
+origins = [
+    "http://localhost",  
+    "http://127.0.0.1", 
+    "http://192.168.1.104"
+    "http://localhost:5500",
+    "http://localhost:8080"  
+    "https://api-gym-1.onrender.com",  
+]
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,  
+    allow_credentials=True,
+    allow_methods=["*"],  
+    allow_headers=["*"], 
+)
+
+
