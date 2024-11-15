@@ -126,10 +126,14 @@ origins = [
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,  
+    allow_origins=[
+        "http://127.0.0.1:5500",  
+        "http://localhost:5500",
+        "http://localhost",
+        "https://api-gym-1.onrender.com"
+    ],
     allow_credentials=True,
-    allow_methods=["*"],  
-    allow_headers=["*"], 
+    allow_methods=["*"], 
+    allow_headers=["*"],  
 )
-
 
