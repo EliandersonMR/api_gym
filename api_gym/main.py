@@ -77,7 +77,8 @@ origins = [
     "http://192.168.1.104",
     "http://localhost:5500",
     "http://localhost:8080",  
-    "https://api-gym-1.onrender.com",  
+    "https://api-gym-1.onrender.com",
+    "https://codecrewfit.netlify.app"
 ]
 
 app.add_middleware(
@@ -86,7 +87,8 @@ app.add_middleware(
         "http://127.0.0.1:5500",  
         "http://localhost:5500",
         "http://localhost",
-        "https://api-gym-1.onrender.com"
+        "https://api-gym-1.onrender.com",
+        "https://codecrewfit.netlify.app"
     ],
     allow_credentials=True,
     allow_methods=["*"], 
