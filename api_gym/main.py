@@ -56,7 +56,7 @@ async def obter_exercicios_endpoint(skip: int = 0, limit: int = 100, db: Session
     db_exercicio = obter_exercicios(db, skip=skip, limit=limit)
     return db_exercicio
 
-@app.put("/exercicios/", response_model=ExercicioResposta)
+@app.put("/exercicios/{exercicio_id}", response_model=ExercicioResposta)
 async def atualizar_exercicio_endpoint(exercicio_id: int, exercicio: ExercicioCriar, db: Session = Depends(obter_db), token: str = Depends(verificar_credenciais)):
     db_exercicio = atualizar_exercicio(db, exercicio_id, exercicio)
     if db_exercicio is None:
