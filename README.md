@@ -28,3 +28,8 @@ pip install -r requirements.txt
 
 # Execute a aplicação
 uvicorn main:app --reload
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT.
+
